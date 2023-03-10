@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sorteio</title>
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+	<h1>SORTEIO</h1>
+	<script>
+
+		function sorteio() {
+			let min = document.getElementById('entrada');
+		    let max = document.getElementById('entrada2');
+		    let n1 = Number(min.value);
+            let n2 = Number(max.value);
+            let res = document.getElementById('resposta')
+            let sort = Math.floor(Math.random() * (n2 - n1) + n1) + n1;
+
+            if(min.value.length == 0){
+                alert('[ERRO] Sem primeiro valor')
+            }else if(max.value.length == 0){
+                alert('[ERRO] Sem segundo valor')
+            }else{
+                res.innerHTML = sort;
+            }
+            
+        }
+	</script>
+	<div>
+		<input type="number" name="entrada" id="entrada" > <br>
+        <input type="number" name="entrada2" id="entrada2">
+        <input type="button" value="SORTEAR" onclick= "sorteio()" id="botão">
+        <section name="resposta" id="resposta"></section><br>
+		<footer> &copy; <span> Nalbert Bastos dos Santos</span></footer>
+	</div>
+
+</body>
+</html>
